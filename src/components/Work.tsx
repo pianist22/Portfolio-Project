@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { FaGithub } from "react-icons/fa6";
+import { smoother } from "./Navbar";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -68,13 +69,22 @@ const Work = () => {
         const workContainer = document.querySelector(".work-container") as HTMLElement;
         if (!workFlex || !workContainer) return 0;
 
-        const scrollWidth = workFlex.scrollWidth;
-        const containerWidth = workContainer.clientWidth;
+        const workBoxes = workFlex.querySelectorAll(".work-box");
+        if (workBoxes.length === 0) return 0;
+
+        let totalBoxesWidth = 0;
+        workBoxes.forEach((box) => {
+          totalBoxesWidth += (box as HTMLElement).offsetWidth;
+        });
 
         const style = window.getComputedStyle(workFlex);
+        const paddingRight = parseFloat(style.paddingRight) || 0;
         const marginLeft = Math.abs(parseFloat(style.marginLeft) || 0);
 
-        const computedX = scrollWidth - containerWidth - marginLeft;
+        const actualScrollWidth = totalBoxesWidth + paddingRight;
+        const containerWidth = workContainer.clientWidth;
+
+        const computedX = actualScrollWidth - containerWidth - marginLeft;
         return computedX > 0 ? computedX : 0;
       }
 
@@ -118,6 +128,8 @@ const Work = () => {
       // Ensure horizontal translation is reset on mobile/tablet viewports
       gsap.set(".work-flex", { x: 0 });
     });
+
+    ScrollTrigger.refresh();
 
     return () => {
       mm.revert();
