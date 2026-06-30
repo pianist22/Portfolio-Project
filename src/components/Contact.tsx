@@ -1,4 +1,4 @@
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import "./styles/Contact.css";
 
 const Contact = () => {
@@ -10,21 +10,25 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href="mailto:example@mail.com" data-cursor="disable">
-                example@mail.com
+              <a href="mailto:priyanshusaha944@gmail.com" data-cursor="disable">
+                priyanshusaha944@gmail.com
               </a>
             </p>
             <h4>Phone</h4>
             <p>
-              <a href="tel:+9199999999" data-cursor="disable">
-                +91 99999 99999
+              <a href="tel:+918920032764" data-cursor="disable">
+                +91 89200 32764
               </a>
+            </p>
+            <h4>Location</h4>
+            <p>
+              New Delhi, India
             </p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com"
+              href="https://github.com/pianist22"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -32,7 +36,7 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/priyanshu-saha-339571262/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -40,29 +44,13 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com"
+              href="https://x.com/PriyanshuS_2004"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
             >
               Twitter <MdArrowOutward />
             </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
-            </a>
-          </div>
-          <div className="contact-box">
-            <h2>
-              Designed and Developed <br /> by <span>Moncy Yohannan</span>
-            </h2>
-            <h5>
-              <MdCopyright /> 2024
-            </h5>
           </div>
         </div>
       </div>
