@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { FaGithub } from "react-icons/fa6";
-import { smoother } from "./Navbar";
+// import { smoother } from "./Navbar";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
